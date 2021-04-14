@@ -1,5 +1,5 @@
 {% set name = "uassist" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 6526dd6e30152c34e0498e8696de99d80d83d7b453092f9aeeeb9beb44d9fa92
+  sha256: a1fed4877dec40b478066a3c640263f67859c0f6430e256c74e5416d7e55e136
 
 build:
   number: 0
@@ -19,6 +19,7 @@ requirements:
     - pip
     - python >=3.6
   run:
+    - earthengine-api
     - folium
     - ipyleaflet
     - pyshp
