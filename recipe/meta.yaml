@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
   sha256: a1fed4877dec40b478066a3c640263f67859c0f6430e256c74e5416d7e55e136
 
 build:
@@ -19,6 +19,7 @@ requirements:
     - pip
     - python >=3.6
   run:
+    - earthengine-api
     - folium
     - ipyleaflet
     - pyshp
