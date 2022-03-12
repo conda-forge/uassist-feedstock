@@ -2,17 +2,17 @@
 {% set version = "0.0.7" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 772afb88080d0d5e1e56a19ac4bb555f892465c4f6d863a042c0fce1ec1c3ecb
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -34,11 +34,11 @@ test:
     - uassist
 
 about:
-  home: "https://github.com/nathanmckinney/uassist"
+  home: https://github.com/nathanmckinney/uassist
   license: GPL-3.0-or-later
   license_family: GPL3
   license_file: LICENSE
-  summary: "UASsist: Assistant for Unmanned Aircraft System photogrammetry for surveying and mapping applications."
+  summary: 'UASsist: Assistant for Unmanned Aircraft System photogrammetry for surveying and mapping applications.'
   doc_url: https://nathanmckinney.github.io/UASsist/
   dev_url: https://github.com/nathanmckinney/uassist
 
