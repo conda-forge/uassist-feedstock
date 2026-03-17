@@ -10,14 +10,14 @@ source:
   sha256: 772afb88080d0d5e1e56a19ac4bb555f892465c4f6d863a042c0fce1ec1c3ecb
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - earthengine-api
     - geojson
@@ -27,9 +27,11 @@ requirements:
     - exifread
     - pandas
     - geopandas
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - uassist
 
